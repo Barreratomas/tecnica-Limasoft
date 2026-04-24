@@ -66,7 +66,7 @@ El frontend en **React** consume la API y renderiza vistas adaptadas según el r
 ##  Setup
 
 ```bash
-git clone https://github.com/tu-usuario/academic-grades
+git clone https://github.com/Barreratomas/tecnica-Limasoft.git
 cd academic-grades
 
 docker compose up -d

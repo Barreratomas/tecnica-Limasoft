@@ -8,6 +8,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use OpenApi\Attributes as OA;
+use App\Http\Requests\Auth\LoginRequest;
+
 
 class AuthController extends Controller
 {
@@ -48,21 +50,16 @@ class AuthController extends Controller
             new OA\Response(response: 401, description: "Credenciales incorrectas"),
         ]
     )]
-    public function login(Request $request): JsonResponse
+    public function login(LoginRequest $request): JsonResponse
     {
-        $credentials = $request->validate([
-            'email'    => 'required|email',
-            'password' => 'required|string',
-        ]);
-
-        if (!Auth::attempt($credentials)) {
+        if (!Auth::attempt($request->validated())) {
             return response()->json([
                 'message' => 'Credenciales incorrectas.',
             ], 401);
         }
 
         /** @var User $user */
-        $user = Auth::user();
+        $user  = Auth::user();
         $token = $user->createToken('api-token')->plainTextToken;
 
         return response()->json([
@@ -88,13 +85,8 @@ class AuthController extends Controller
     )]
     public function logout(Request $request): JsonResponse
     {
-        /** @var User|null $user */
-        $user = $request->user();
-
-        if ($user) {
-            /** @var \Laravel\Sanctum\PersonalAccessToken|null $token */
-            $token = $user->currentAccessToken();
-            $token?->delete();
+        if ($request->user()?->currentAccessToken()) {
+            $request->user()->currentAccessToken()->delete();
         }
 
         return response()->json([
@@ -133,6 +125,7 @@ class AuthController extends Controller
                 'message' => 'Usuario no autenticado.'
             ], 401);
         }
+        // dd(auth()->user());
 
         return response()->json([
             'id'    => $user->id,

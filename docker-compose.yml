@@ -1,0 +1,54 @@
+services:
+  mysql:
+    image: mysql:8
+    container_name: academic_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: academic_grades
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    container_name: academic_back
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: academic_grades
+      DB_USERNAME: root
+      DB_PASSWORD: root
+      PHP_CLI_SERVER_WORKERS: 4
+    volumes:
+      - ./back:/var/www/html
+    ports:
+      - "8000:8000"
+    command: php artisan serve --host=0.0.0.0 --port=8000
+
+  frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    container_name: academic_front
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./front:/app
+      - /app/node_modules
+    environment:
+      VITE_API_URL: http://localhost:8000/api
+
+volumes:
+  mysql_data:

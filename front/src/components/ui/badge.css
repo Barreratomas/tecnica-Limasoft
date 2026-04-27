@@ -1,0 +1,21 @@
+.edu-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.edu-badge--admin {
+  background: rgba(91,33,182,0.08);
+  color: #5b21b6;
+}
+.edu-badge--teacher {
+  background: rgba(30,64,175,0.06);
+  color: #1e40af;
+}
+.edu-badge--student {
+  background: rgba(16,101,52,0.06);
+  color: #166534;
+}

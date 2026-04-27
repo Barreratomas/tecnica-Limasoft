@@ -1,0 +1,36 @@
+.edu-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #07203a;
+}
+
+.edu-table thead tr {
+  background: rgba(11,32,58,0.04);
+}
+
+.edu-table th,
+.edu-table td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.edu-table th {
+  font-weight: 700;
+  font-size: 13px;
+  color: #0b2a46;
+}
+
+.edu-table tbody tr {
+  border-bottom: 1px solid var(--edu-border);
+}
+
+.edu-table tbody tr:hover {
+  background: rgba(11,83,148,0.02);
+}
+
+.edu-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+}

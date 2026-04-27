@@ -18,13 +18,13 @@ class GradeSeeder extends Seeder
         $teacher1 = User::where('email', 'garcia@demo.com')->first();
         $teacher2 = User::where('email', 'lopez@demo.com')->first();
 
-        // Algunas notas cargadas, otras vacías para mostrar el flujo en la demo
+       
         $grades = [
             ['enrollment_id' => 1, 'value' => 8.50, 'updated_by' => $teacher1->id, 'notes' => 'Buen desempeño.'],
             ['enrollment_id' => 2, 'value' => 7.00, 'updated_by' => $teacher2->id, 'notes' => 'Puede mejorar.'],
             ['enrollment_id' => 3, 'value' => 9.00, 'updated_by' => $teacher1->id, 'notes' => 'Excelente trabajo.'],
             ['enrollment_id' => 5, 'value' => 6.00, 'updated_by' => $teacher1->id, 'notes' => null],
-            // enrollments 4, 6, 7, 8 sin nota — para mostrar el flujo de carga
+            
         ];
 
         foreach ($grades as $grade) {

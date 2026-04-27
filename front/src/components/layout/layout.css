@@ -1,0 +1,122 @@
+/* App layout and navigation styles */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-navbar {
+  background: linear-gradient(180deg, rgba(11,32,58,0.98), rgba(11,32,58,0.96));
+  color: #fff;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(2,6,23,0.08);
+}
+
+.mobile-menu-btn {
+  display: none;
+}
+
+.app-brand {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+}
+
+.app-main {
+  display: flex;
+  flex: 1;
+}
+
+.app-sidebar {
+  width: 220px;
+  background: var(--edu-card);
+  border-right: 1px solid var(--edu-border);
+  padding: 18px;
+  min-height: calc(100vh - 56px);
+  box-sizing: border-box;
+}
+
+.app-content {
+  flex: 1;
+  padding: 24px;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #0b2a46;
+  font-weight: 500;
+}
+
+.nav-link.active {
+  background: rgba(11,83,148,0.08);
+  color: var(--edu-primary);
+  font-weight: 700;
+}
+
+.nav-link:focus-visible {
+  outline: 3px solid var(--edu-focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .app-sidebar {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .app-sidebar.open {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 56px;
+    bottom: 0;
+    width: 80%;
+    max-width: 300px;
+    background: var(--edu-card);
+    z-index: 60;
+    padding: 18px;
+    box-shadow: 2px 0 12px rgba(2,6,23,0.2);
+    overflow-y: auto;
+  }
+
+  .sidebar-overlay {
+    position: fixed;
+    left: 0;
+    top: 56px;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 50;
+  }
+
+  /* a small overlay to close menu when clicking outside */
+  .app-sidebar.open::after {
+    content: '';
+  }
+  .app-content {
+    padding: 16px;
+  }
+}

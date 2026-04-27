@@ -14,8 +14,6 @@ use App\Policies\GradePolicy;
 class AuthServiceProvider extends ServiceProvider
 {
     /**
-     * The policy mappings for the application.
-     *
      * @var array<class-string, class-string>
      */
     protected $policies = [
@@ -24,13 +22,11 @@ class AuthServiceProvider extends ServiceProvider
         Enrollment::class => GradePolicy::class,
     ];
 
-    /**
-     * Register any authentication / authorization services.
-     */
+
     public function boot(): void
     {
         $this->registerPolicies();
 
-        // Additional gate definitions can go here.
+        
     }
 }

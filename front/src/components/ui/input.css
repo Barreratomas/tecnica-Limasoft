@@ -1,0 +1,28 @@
+.edu-field {
+  margin-bottom: 16px;
+}
+
+.edu-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--edu-border);
+  border-radius: 8px;
+  font-size: 15px;
+  box-sizing: border-box;
+  background: var(--edu-card);
+  color: #07203a;
+}
+
+.edu-input:focus,
+.edu-input:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--edu-focus);
+  border-color: var(--edu-primary);
+}
+
+.edu-error {
+  color: #b91c1c;
+  font-size: 13px;
+  margin-top: 6px;
+  display: block;
+}

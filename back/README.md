@@ -1,4 +1,4 @@
-# Academic Grades — Documentación técnica
+#  Documentación técnica
 
 
 
@@ -21,12 +21,6 @@ El frontend en **React** consume la API y renderiza vistas adaptadas según el r
 * Laravel Sanctum
 * Spatie Laravel Permission
 
-**Frontend**
-
-* React 18
-* Vite
-* React Router
-* Axios
 
 **Base de datos**
 
@@ -45,29 +39,13 @@ El frontend en **React** consume la API y renderiza vistas adaptadas según el r
 * Swagger / OpenAPI (darkaonline/l5-swagger)
 
 
-
-
-
 ---
-
-##  Decisiones de arquitectura
-
-* Laravel: rapidez + ecosistema
-* Sanctum: simple vs OAuth
-* Spatie: estándar de roles
-* Repository Pattern: desacople
-* Relación grades→enrollments: integridad
-* React: claridad en frontend
-
----
-
-
 
 ##  Setup
 
 ```bash
 git clone https://github.com/Barreratomas/tecnica-Limasoft.git
-cd academic-grades
+cd tecnica-Limasoft
 
 docker compose up -d
 

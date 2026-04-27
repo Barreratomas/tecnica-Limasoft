@@ -47,3 +47,14 @@ PUT    /api/users/{id}
 ```
 Authorization: Bearer {token}
 ```
+
+Swagger / OpenAPI
+
+- UI: `/api/documentation` (ver `back/config/l5-swagger.php`)
+- Archivo JSON generado: `back/storage/api-docs/api-docs.json`
+
+Ejemplo: para ver la documentación en tu entorno local abrir:
+
+```
+http://localhost:8000/api/documentation
+```

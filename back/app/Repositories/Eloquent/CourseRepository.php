@@ -10,19 +10,19 @@ class CourseRepository implements CourseRepositoryInterface
 {
     public function findAll(): Collection
     {
-        return Course::with('teacher')->get();
+        return Course::with('teacher', 'enrollments.student', 'enrollments.grade')->get();
     }
 
     public function findByTeacher(int $teacherId): Collection
     {
-        return Course::with('teacher')
+        return Course::with('teacher', 'enrollments.student', 'enrollments.grade')
                      ->where('teacher_id', $teacherId)
                      ->get();
     }
 
     public function findByStudent(int $studentId): Collection
     {
-        return Course::with('teacher')
+        return Course::with('teacher', 'enrollments.student', 'enrollments.grade')
                      ->whereHas('enrollments', function ($q) use ($studentId) {
                          $q->where('student_id', $studentId);
                      })

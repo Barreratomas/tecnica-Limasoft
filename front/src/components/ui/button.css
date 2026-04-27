@@ -1,0 +1,67 @@
+.edu-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: var(--body-font);
+  font-weight: 600;
+  cursor: pointer;
+  transition: box-shadow 180ms ease, transform 120ms ease, opacity 180ms ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edu-btn:focus,
+.edu-btn:focus-visible {
+  outline: 3px solid var(--edu-focus);
+  outline-offset: 2px;
+}
+
+.edu-btn--primary {
+  background: var(--edu-primary);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(11,83,148,0.08);
+}
+
+.edu-btn--secondary {
+  background: transparent;
+  color: var(--edu-primary);
+  border: 1px solid var(--edu-border);
+}
+
+.edu-btn--danger {
+  background: #b91c1c;
+  color: #fff;
+}
+
+.edu-btn.is-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.edu-btn--small {
+  padding: 6px 10px;
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+/* Small inline spinner for buttons */
+.btn-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+.btn-spinner-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top-color: rgba(255,255,255,0.95);
+  animation: btn-spin 700ms linear infinite;
+}
+
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}

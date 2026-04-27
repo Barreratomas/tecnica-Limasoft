@@ -5,7 +5,7 @@ namespace App\Docs;
 use OpenApi\Attributes as OA;
 
 #[OA\Info(
-    title: "Academic Grades API",
+    title: "API",
     version: "1.0.0",
     description: "API para gestión de cursos, matrículas y notas"
 )]

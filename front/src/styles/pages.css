@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.dashboard h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #07203a;
+}
+
+.muted-paragraph {
+  color: var(--edu-muted);
+  margin-bottom: 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+.stat-card .stat-value {
+  font-size: 40px;
+  font-weight: 700;
+}
+.stat-card .stat-label {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.stat-card--courses { background: rgba(219,234,254,0.6); color: #1e40af; }
+.stat-card--teachers { background: rgba(237,233,254,0.6); color: #5b21b6; }
+.stat-card--students { background: rgba(220,252,231,0.6); color: #166534; }
+
+.courses-list { display: grid; gap: 16px; }
+
+.course-card {
+  padding: 16px;
+  border: 1px solid var(--edu-border);
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--edu-card);
+  transition: box-shadow 200ms ease, transform 120ms ease;
+}
+.course-card:hover {
+  box-shadow: 0 8px 20px rgba(11,83,148,0.06);
+  transform: translateY(-3px);
+}
+
+.course-meta { margin: 0; color: var(--edu-muted); font-size: 14px; }
+.course-desc { margin-top: 8px; font-size: 13px; color: #94a3b8; }
+
+.small-input {
+  width: 84px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--edu-border);
+  background: var(--edu-card);
+  color: #07203a;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+.small-input[type="number"] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+  padding-right: 12px;
+}
+.small-input[type="number"]::-webkit-outer-spin-button,
+.small-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.small-input:focus,
+.small-text:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--edu-focus);
+  border-color: var(--edu-primary);
+}
+.small-input::placeholder,
+.small-text::placeholder {
+  color: #94a3b8;
+}
+.small-text {
+  width: 180px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--edu-border);
+  background: var(--edu-card);
+  color: #07203a;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.detail-card { padding: 24px; border: 1px solid var(--edu-border); border-radius: 8px; background: var(--edu-card); max-width: 720px; }
+
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
+
+/* Forms and utilities */
+.form-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
+/* Login styles */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 24px;
+}
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 28px;
+  text-align: left;
+  font-family: 'Poppins', var(--body-font);
+}
+.login-brand {
+  font-weight: 700;
+  font-size: 20px;
+  color: #07203a;
+  margin-bottom: 6px;
+}
+.login-subtitle {
+  font-size: 14px;
+  color: var(--edu-muted);
+  margin-bottom: 18px;
+}
+/* Login card input overrides to ensure good contrast */
+.login-card .edu-input {
+  background: #f1f7fb;
+  color: #07203a;
+  border: 1px solid var(--edu-border);
+}
+.login-card .edu-input::placeholder {
+  color: #94a3b8;
+}
+
+/* Autofill fixes */
+.login-card input:-webkit-autofill,
+.login-card input:-webkit-autofill:hover,
+.login-card input:-webkit-autofill:focus,
+.login-card input:-internal-autofill-selected {
+  -webkit-text-fill-color: #07203a !important;
+  box-shadow: 0 0 0px 1000px #f1f7fb inset !important;
+}
+
+/* Full-width primary action inside login */
+.login-card .form-actions { display: flex; gap: 8px; margin-top: 12px; }
+.login-card .form-actions .edu-btn { width: 100%; }
+.form-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; }
+
+.form-row { margin-bottom: 16px; }
+
+.form-actions { display: flex; gap: 8px; }
+
+.edu-select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--edu-border);
+  background: var(--edu-card);
+  box-sizing: border-box;
+  color: #07203a;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.edu-select option {
+  color: #07203a;
+  background: var(--edu-card);
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.row-actions { display: flex; gap: 8px; }
+
+.back-button { margin-bottom: 24px; }
+

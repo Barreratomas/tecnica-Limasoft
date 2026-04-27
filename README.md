@@ -80,4 +80,3 @@ Documentación relevante:
 - `docs/TESTING.md` — cómo ejecutar tests.
 - `docs/TROUBLESHOOTING.md` — errores comunes y soluciones rápidas.
 
-Si necesitas que haga una revisión adicional o resuma algún punto en castellano/inglés, dímelo.

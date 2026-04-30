@@ -29,9 +29,4 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(EnrollmentRepositoryInterface::class, EnrollmentRepository::class);
         $this->app->bind(GradeRepositoryInterface::class, GradeRepository::class);
     }
-    
-    /**
-     * Para tests: reemplaza un binding con un mock usando:
-     *   $this->app->instance(CourseRepositoryInterface::class, $mockInstance);
-     */
 }

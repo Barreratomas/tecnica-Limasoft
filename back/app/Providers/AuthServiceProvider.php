@@ -14,6 +14,8 @@ use App\Policies\GradePolicy;
 class AuthServiceProvider extends ServiceProvider
 {
     /**
+     * Mapeo de modelos a sus políticas de autorización
+     * Define qué política usar para autorizar acciones sobre cada modelo
      * @var array<class-string, class-string>
      */
     protected $policies = [
@@ -25,8 +27,7 @@ class AuthServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        // Registra las políticas definidas arriba en el contenedor de servicios
         $this->registerPolicies();
-
-        
     }
 }

@@ -39,13 +39,40 @@ app/
 | created_at | timestamp    | Creación            |
 | updated_at | timestamp    | Actualización       |
 
-#### roles (Spatie)
+#### roles
 
 | Columna    | Tipo         |
 | ---------- | ------------ |
 | id         | bigint (PK)  |
 | name       | varchar(125) |
 | guard_name | varchar(125) |
+
+#### model_has_roles (Pivote Usuario-Rol)
+
+| Columna    | Tipo         | Descripción       |
+| ---------- | ------------ | ----------------- |
+| role_id    | bigint (FK)  | → roles           |
+| model_type | varchar(255) | 'App\Models\User' |
+| model_id   | bigint       | → users (id)      |
+
+**Nota:** Tabla polimórfica. Es donde se asigna cada rol a cada usuario.
+
+#### permissions 
+
+| Columna    | Tipo         |
+| ---------- | ------------ |
+| id         | bigint (PK)  |
+| name       | varchar(125) |
+| guard_name | varchar(125) |
+
+#### role_has_permissions (Pivote Rol-Permisos)
+
+| Columna       | Tipo        | Descripción   |
+| ------------- | ----------- | ------------- |
+| permission_id | bigint (FK) | → permissions |
+| role_id       | bigint (FK) | → roles       |
+
+**Nota:** Relaciona cada permiso con cada rol.
 
 #### courses
 

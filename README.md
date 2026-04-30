@@ -4,9 +4,9 @@ Sistema de gestión de notas académicas con roles diferenciados: administrador,
 
 ## Stack
 
-- **Backend:** Laravel 11, Sanctum, Spatie Permission
-- **Frontend:** React 18, Vite, React Router, Axios
-- **Base de datos:** MySQL 8
+- **Backend:** Laravel, Sanctum, Spatie Permission
+- **Frontend:** React, Vite, React Router, Axios
+- **Base de datos:** MySQL 
 - **Infraestructura:** Docker Compose
 
 ## Instalación
